@@ -1,0 +1,22 @@
+<html>
+<head>
+<style>
+</style>
+</head>
+<script>
+function addAnother() {
+var newListItem = document.createElement('li');
+var newText = document.createTextNode(Math.floor(Math.random()*10));
+newListItem.appendChild(newText);
+var position = document.getElementsByTagName('ul')[0];
+position.appendChild(newListItem);
+}
+</script>
+<body>
+
+<ul>
+
+</ul>
+<button onclick="addAnother()">Click</button>
+<body>
+</html>
