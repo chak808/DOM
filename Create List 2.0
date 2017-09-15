@@ -1,0 +1,26 @@
+function addAnother() {
+var newListItem = document.createElement('li');
+var x = document.getElementById('x').value;
+var newText = document.createTextNode(x);
+newListItem.appendChild(newText);
+var position = document.getElementsByTagName('ol')[0];
+position.appendChild(newListItem);
+}
+function remove() {
+var y = document.getElementById('y').value;
+var removeItem = document.getElementsByTagName('li')[y];
+var ol = removeItem.parentNode;
+ol.removeChild(removeItem);
+}
+
+
+
+
+
+<ol>
+</ol>
+<input type="text" id="x">
+<button onclick="addAnother()">Add List</button>
+<br>
+<input type="number" id="y">
+<button onclick="remove()">Remove from list</button>
