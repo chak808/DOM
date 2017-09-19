@@ -1,0 +1,86 @@
+Win:<p id="win"></p>
+Lose:<p id="lose"></p>
+Tie:<p id="tie"></p>
+<br>
+<button onclick="rock()">
+Rock
+</button>
+<button onclick="paper()">
+Paper
+</button>
+<button onclick="scissors()">
+Scissors
+</button>
+<br>
+COM:<p id="com"></p>
+Player<p id="player"></p>
+
+
+var win = 0;
+var lose = 0;
+var tie = 0;
+function score() {
+document.getElementById('win').innerHTML = win;
+document.getElementById('lose').innerHTML = lose;
+document.getElementById('tie').innerHTML = tie;
+}
+
+
+function rock() {
+var comRPS = Math.floor(Math.random()*3);
+if (comRPS == 0) {
+document.getElementById('com').innerHTML = "ROCK";
+document.getElementById('player').innerHTML = "ROCK";
+tie++;
+}
+else if (comRPS == 1) {
+document.getElementById('com').innerHTML = "PAPER";
+document.getElementById('player').innerHTML = "ROCK";
+lose++;
+}
+else {
+document.getElementById('com').innerHTML = "SCISSORS";
+document.getElementById('player').innerHTML = "ROCK";
+win++;
+}
+score();
+}
+
+function paper() {
+var comRPS = Math.floor(Math.random()*3);
+if (comRPS == 0) {
+document.getElementById('com').innerHTML = "ROCK";
+document.getElementById('player').innerHTML = "PAPER";
+win++;
+}
+else if (comRPS == 1) {
+document.getElementById('com').innerHTML = "PAPER";
+document.getElementById('player').innerHTML = "PAPER";
+tie++;
+}
+else {
+document.getElementById('com').innerHTML = "SCISSORS";
+document.getElementById('player').innerHTML = "PAPER";
+lose++;
+}
+score();
+}
+function scissors() {
+var comRPS = Math.floor(Math.random()*3);
+if (comRPS == 0) {
+document.getElementById('com').innerHTML = "ROCK";
+document.getElementById('player').innerHTML = "SCISSORS";
+lose++;
+}
+else if (comRPS == 1) {
+document.getElementById('com').innerHTML = "PAPER";
+document.getElementById('player').innerHTML = "SCISSORS";
+win++;
+}
+else {
+document.getElementById('com').innerHTML = "SCISSORS";
+document.getElementById('player').innerHTML = "SCISSORS";
+tie++;
+}
+score();
+}
