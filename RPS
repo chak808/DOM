@@ -1,6 +1,8 @@
-Win:<p id="win"></p>
-Lose:<p id="lose"></p>
-Tie:<p id="tie"></p>
+Win:<span id="win"></span>
+<br>
+Lose:<span id="lose"></span>
+<br>
+Tie:<span id="tie"></span>
 <br>
 <button onclick="rock()">
 Rock
@@ -12,8 +14,13 @@ Paper
 Scissors
 </button>
 <br>
-COM:<p id="com"></p>
-Player<p id="player"></p>
+COM: <span id="com"></span>
+<br>
+Player: <span id="player"></span>
+<br>
+<button onclick="reset()">
+
+
 
 
 var win = 0;
@@ -24,7 +31,14 @@ document.getElementById('win').innerHTML = win;
 document.getElementById('lose').innerHTML = lose;
 document.getElementById('tie').innerHTML = tie;
 }
+score();
 
+function reset() {
+win = 0;
+lose = 0;
+tie = 0;
+score();
+}
 
 function rock() {
 var comRPS = Math.floor(Math.random()*3);
